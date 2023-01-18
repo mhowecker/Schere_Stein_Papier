@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>Schere Stein Papier</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 252, 215);</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
@@ -26,7 +29,9 @@
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">border-color: rgb(0, 0, 0);</string>
+         <string notr="true">border : solid;
+border-color : rgb(0, 0, 0);
+border-width : 1px;</string>
         </property>
         <property name="frameShape">
          <enum>QFrame::StyledPanel</enum>
@@ -44,7 +49,9 @@
         <item>
          <widget class="QLabel" name="l_round">
           <property name="styleSheet">
-           <string notr="true">border-color: rgb(0, 0, 0);</string>
+           <string notr="true">border : solid;
+border-color : rgb(0, 0, 0);
+border-width : 1px;</string>
           </property>
           <property name="frameShape">
            <enum>QFrame::StyledPanel</enum>
@@ -57,7 +64,9 @@
         <item>
          <widget class="QLabel" name="l_round_number">
           <property name="styleSheet">
-           <string notr="true">border-color: rgb(0, 0, 0);</string>
+           <string notr="true">border : solid;
+border-color : rgb(0, 0, 0);
+border-width : 1px;</string>
           </property>
           <property name="frameShape">
            <enum>QFrame::StyledPanel</enum>
@@ -73,17 +82,39 @@
        </layout>
       </item>
       <item>
-       <widget class="QLabel" name="l_turn_last">
-        <property name="styleSheet">
-         <string notr="true">border-color: rgb(0, 0, 0);</string>
-        </property>
-        <property name="frameShape">
-         <enum>QFrame::StyledPanel</enum>
-        </property>
-        <property name="text">
-         <string>letzter Zug</string>
-        </property>
-       </widget>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <widget class="QLabel" name="l_turn_last_player">
+          <property name="styleSheet">
+           <string notr="true">border: solid;
+border-width: 0px;</string>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="text">
+           <string>Spielzug des Players</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="l_turn_last_computer">
+          <property name="styleSheet">
+           <string notr="true">border: solid;
+border-width: 0px;</string>
+          </property>
+          <property name="text">
+           <string>Spielzug des Computers</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </item>
      </layout>
     </item>
@@ -92,7 +123,11 @@
       <item row="1" column="0">
        <widget class="QLabel" name="l_player_points">
         <property name="styleSheet">
-         <string notr="true">border-color: rgb(0, 0, 0);</string>
+         <string notr="true">border : solid black;
+border-color: rgb(110, 195, 91);
+border-width: 2px;
+border-radius : 7px;
+background-color: rgb(200, 255, 180);</string>
         </property>
         <property name="frameShape">
          <enum>QFrame::StyledPanel</enum>
@@ -108,7 +143,10 @@
       <item row="0" column="0">
        <widget class="QLabel" name="l_player">
         <property name="styleSheet">
-         <string notr="true">border-color: rgb(0, 0, 0);</string>
+         <string notr="true">border : solid black;
+border-color: rgb(110, 195, 91);
+border-width: 2px;
+border-radius : 7px;</string>
         </property>
         <property name="frameShape">
          <enum>QFrame::StyledPanel</enum>
@@ -124,7 +162,11 @@
       <item row="1" column="2">
        <widget class="QLabel" name="l_computer_points">
         <property name="styleSheet">
-         <string notr="true">border-color: rgb(0, 0, 0);</string>
+         <string notr="true">border : solid black;
+border-color: rgb(89, 100, 255);
+border-width: 2px;
+border-radius : 7px;
+background-color: rgb(180, 220, 255);</string>
         </property>
         <property name="frameShape">
          <enum>QFrame::StyledPanel</enum>
@@ -140,7 +182,10 @@
       <item row="0" column="2">
        <widget class="QLabel" name="l_computer">
         <property name="styleSheet">
-         <string notr="true">border-color: rgb(0, 0, 0);</string>
+         <string notr="true">border : solid black;
+border-color: rgb(89, 100, 255);
+border-width: 2px;
+border-radius : 7px;</string>
         </property>
         <property name="frameShape">
          <enum>QFrame::StyledPanel</enum>
@@ -171,13 +216,43 @@
       </item>
       <item row="2" column="2">
        <widget class="QPushButton" name="pb_execute">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;Führe deinen Zug aus!&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+border : groove;
+border-color: rgb(0, 0, 0);
+border-width: 2px;
+border-radius : 7px;
+background-color: rgb(255, 147, 147);
+}
+QPushButton:hover{
+	background-color: rgb(255, 101, 104);
+}</string>
+        </property>
         <property name="text">
          <string>Ausführen</string>
         </property>
        </widget>
       </item>
       <item row="2" column="1">
-       <widget class="QComboBox" name="coB_sign"/>
+       <widget class="QComboBox" name="coB_sign">
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Wähle deinen nächsten Spielzug aus!&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
       </item>
      </layout>
     </item>
@@ -185,6 +260,32 @@
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
        <widget class="QPushButton" name="pb_reset">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;Beginne das Spiel von vorn!&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+border: groove ;
+border-radius : 7px;
+border-width: 2px;
+border-color: rgb(100, 100, 100);
+background-color: rgb(204, 204, 204);
+}
+QPushButton:hover{
+background-color: rgb(148, 148, 148);
+}</string>
+        </property>
         <property name="text">
          <string>Zurücksetzen</string>
         </property>
@@ -192,6 +293,32 @@
       </item>
       <item>
        <widget class="QPushButton" name="pb_close">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt; Beende das Spiel!&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+border: groove ;
+border-radius : 7px;
+border-width: 2px;
+border-color: rgb(100, 100, 100);
+background-color: rgb(204, 204, 204);
+}
+QPushButton:hover{
+background-color: rgb(148, 148, 148);
+}</string>
+        </property>
         <property name="text">
          <string>Schließen</string>
         </property>
@@ -207,7 +334,7 @@
      <x>0</x>
      <y>0</y>
      <width>762</width>
-     <height>30</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>

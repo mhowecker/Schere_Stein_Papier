@@ -22,9 +22,9 @@ class Controller:
         pp2 = self.model.p2_points
         r = self.model.rounds
 
-        t = "Spieler [{0}], Computer [{1}]".format(lp1, lp2)
+        #t = "Spieler [{0}], Computer [{1}]".format(lp1, lp2)
 
-        self.view.update(pp1, pp2, r, t)
+        self.view.update(pp1, pp2, r, lp1, lp2)
 
 
 if __name__ == '__main__':
